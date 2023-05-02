@@ -13,7 +13,7 @@ for(arx of archivos) {
     console.log(`comando ${arx} iniciado correctamente`)
 }
 client.on("messageCreate", async message =>{
-    const prefix = "/"
+    const prefix = "!"
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLocaleLowerCase()
 
