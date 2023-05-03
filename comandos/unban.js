@@ -19,13 +19,13 @@ module.exports = {
 
             const usuarioBaneado = await message.guild.bans.fetch();
 
-            const user = usuarioBaneado.find(user => user.user.id === usuarioId);
+            const encontrarUsuario = usuarioBaneado.find(encontrarUsuario => encontrarUsuario.user.id === usuarioId);
 
-            if(!user)
+            if(!encontrarUsuario)
                 return message.reply({content: "El usuario que intentas desbanear no está baneado"});
 
-            await message.guild.members.unban(user.user);
-            await message.reply({content:`Se desbaneó a ${user.user.tag} correctamente`});
+            await message.guild.members.unban(encontrarUsuario.user);
+            await message.reply({content:`Se desbaneó a ${encontrarUsuario.user.tag} correctamente`});
         } catch(error) {
             console.log(error);
             message.reply({content: "Error al desbanear al usuario"});
