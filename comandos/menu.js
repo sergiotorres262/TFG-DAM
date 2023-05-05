@@ -1,4 +1,4 @@
-const { Client, EmbedBuilder, ButtonBuilder, ActionRowBuilder, SelectMenuBuilder, Collection } = require('discord.js')
+/*const { Client, EmbedBuilder, ButtonBuilder, ActionRowBuilder, SelectMenuBuilder, Collection } = require('discord.js')
 
 module.exports ={
     name: "menu",
@@ -32,4 +32,4 @@ module.exports ={
        
     }
     
-}
+}*/

@@ -49,23 +49,5 @@ client.on("messageCreate", async message =>{
     }
 })
 
-client.on("interactionCreate", async interaction => {
-    const valor = interaction.values[0]
-    if(valor == "Valor"){
-     interaction.update({
-         content: "Respuesta de la opcion 1", components:[]
-     })
-    }
-    
-    if(valor == "Valor2"){
-     interaction.update({
-         content: "Respuesta de la opcion 2", ephemeral: true
-     })
-    } 
- })
-
-
-
-
 client.login(config.token)
 console.log("El bot está listo")
