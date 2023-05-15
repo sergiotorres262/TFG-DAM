@@ -2,6 +2,7 @@ const { Client, EmbedBuilder, ButtonBuilder, ActionRowBuilder, SelectMenuBuilder
 const client = new Client({intents: [3276799]})
 const fs = require("fs")
 const config = require('./config.json')
+const mongoose = require("mongoose")
 
 client.commands = new Collection()
 
@@ -12,8 +13,6 @@ for(arx of archivos) {
     client.commands.set(comando.name, comando)
     console.log(`comando ${arx} iniciado correctamente`)
 }
-
- const palabrasMalsonantes = ['palabra1', 'palabra2', 'palabra3'];
 
 
  client.on('messageCreate', (message) => {
@@ -51,3 +50,18 @@ client.on("messageCreate", async message =>{
 
 client.login(config.token)
 console.log("El bot está listo")
+
+
+  mongoose.connect(config.mongopass,{
+  keepAlive: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+try{
+  if(mongoose.connect){
+    console.log("El bot se ha conectado a la base de datos correctamente")
+  }
+}catch{
+  console.log("Error al conectar a la base de datos")
+}
