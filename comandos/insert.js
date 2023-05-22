@@ -1,5 +1,5 @@
-const{ChatInputCommandInteraction, SlashCommandBuilder, PermissionFlagsBits} = require("discord.js")
-const tablas = require("../Schemas/test")
+const{ChatInputCommandInteraction, SlashCommandBuilder, PermissionFlagsBits} = require("discord.js"); 
+const tablas = require("../Schemas/test");
 
 module.exports = {
     "name": "insert",
@@ -7,7 +7,7 @@ module.exports = {
 
      run: async (client, message, args) =>{
       if(!message.guild.members.me.permissions.has(PermissionFlagsBits.Administrator)) 
-            return message.reply({content: "No tienes permisos de administrador"})
+            return message.reply({content: "No tienes permisos de administrador"});
 
         const word = args[0];
         if(!word) 
@@ -17,9 +17,10 @@ module.exports = {
             tablas.create({
               palabra: word
             });
+          message.channel.send(`La palabra ${args[0]} ha sido introducida correctamente`);
           }else{
-            message.channel.send(`La palabra ${data.palabra} ya ha sido introducida`);
+            message.channel.send(`La palabra ${data.palabra} ya está en nuestra base de datos`);
           }
         });   
     }       
-    }
+}

@@ -9,7 +9,6 @@ module.exports = {
     if (!message.guild.members.me.permissions.has(PermissionFlagsBits.Administrator)) {
       return message.reply({ content: "No tienes permisos de administrador" });
     }
-
     const word = args[0];
     if(!word) 
          return message.reply({content: "Debes especificar la palabra para borrar"});
