@@ -10,12 +10,11 @@ module.exports = {
 
         if(!message.guild.members.me.permissions.has(PermissionFlagsBits.BanMembers)) 
             return message.reply({content: "No tengo permisos para desbanear"});
-
         try {
             const usuarioId = args[0];
 
             if(!usuarioId) 
-                return message.reply({content: "Debes especificar el ID de un usuario (ej: AAA#7495)"});
+                return message.reply({content: "Debes especificar el ID de un usuario (ej: 754830011227439204)"});
 
             const usuarioBaneado = await message.guild.bans.fetch();
 
