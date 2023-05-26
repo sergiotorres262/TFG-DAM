@@ -6,8 +6,8 @@ module.exports = {
     description: "kick usuario", 
 
     run: async (client, message, args) => {
-        if(!message.member.permissions.has(PermissionFlagsBits.KickMember)) 
-            return message.reply({content: "No tengo permisos para kickear"})
+        if(!message.member.permissions.has(PermissionFlagsBits.KickMembers)) 
+            return message.reply({content: "No tienes permisos para kickear"})
         if(!message.guild.members.me.permissions.has(PermissionFlagsBits.Administrator)) 
             return message.reply({content: "No tienes permisos de administrador"})
 

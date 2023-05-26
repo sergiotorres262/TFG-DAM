@@ -9,12 +9,8 @@ module.exports = {
             .addComponents(
                 new ButtonBuilder()
                     .setCustomId('rol1')
-                    .setLabel('Prueba')
-                    .setStyle('Danger'),
-                new ButtonBuilder()
-                    .setCustomId('rol2')
-                    .setLabel('Prueba2')
-                    .setStyle('Primary')
+                    .setLabel('Rol AutoRol')
+                    .setStyle('Danger')
             );
         
         const embed = new EmbedBuilder()

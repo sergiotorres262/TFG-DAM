@@ -5,8 +5,8 @@ module.exports = {
     description: "Desbanear a un usuario", 
 
     run: async (client, message, args) => {
-        if(!message.member.permissions.has(PermissionFlagsBits.KickMembers)) 
-            return message.reply({content: "No tengo permisos para desbanear"});
+        if(!message.member.permissions.has(PermissionFlagsBits.BanMembers)) 
+            return message.reply({content: "No tienes permisos para desbanear"});
 
         if(!message.guild.members.me.permissions.has(PermissionFlagsBits.BanMembers)) 
             return message.reply({content: "No tengo permisos para desbanear"});

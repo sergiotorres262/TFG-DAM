@@ -20,13 +20,12 @@ client.on('messageCreate', (message) => {
   if (message.author.bot) {
     return;
   }
-
   const words = message.content.toLowerCase().match(/\b\w+\b/g);
 
   tablas.findOne({ palabra: { $in: words } }).then((data) => {
     if (data !== null) {
       const palabraMalsonante = data.palabra;
-      message.reply({ content: `Palabra malsonante: ${palabraMalsonante}` })
+      message.reply({ content: `Palabra malsonante detectada: ${palabraMalsonante}` })
         .then(() => {
           const member = message.member;
           if (!member.permissions.has(PermissionFlagsBits.ManageMessages)) {
